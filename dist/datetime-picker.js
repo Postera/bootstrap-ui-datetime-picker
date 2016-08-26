@@ -562,6 +562,7 @@ angular.module('ui.bootstrap.datetimepicker', ['ui.bootstrap.dateparser', 'ui.bo
                 }
 
                 if (angular.isString(viewValue)) {
+                    viewValue = viewValue ? viewValue.toUpperCase() : viewValue;
                     var date = parseDateString(viewValue);
                     if (!isNaN(date)) {
                         return uibDateParser.toTimezone(date, ngModelOptions.timezone);
